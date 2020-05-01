@@ -45,6 +45,7 @@ public class main {
                     System.out.printf("Unerlaubte Eingabe, bitte geben Sie eine Zahl zwischen 1 und 7 an");
                 }
             }
+            System.out.printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
             kartenAnzeigen(2, index);
             gewonnen = vergleich(eigenschaft, index);
         }
@@ -106,7 +107,6 @@ public class main {
                             "|" + karten.get(spielerEins[index[0]]).getHubraum() + '\n' +
                             "|" + karten.get(spielerEins[index[0]]).getBeschleunigung() + '\n' + "Um fortzufahren bitte Eingabe drücken:");
             scanner.nextLine();
-            System.out.printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
         } else if (option == 1) {
             System.out.printf(
                     "|" + karten.get(spielerZwei[index[1]]).getMarke() + '\n' +
@@ -117,7 +117,6 @@ public class main {
                             "|" + karten.get(spielerZwei[index[1]]).getHubraum() + '\n' +
                             "|" + karten.get(spielerZwei[index[1]]).getBeschleunigung() + '\n' + "Um fortzufahren bitte Eingabe drücken:");
             scanner.nextLine();
-            System.out.printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
         } else if (option == 2) {
             System.out.printf(
                     "|" + karten.get(spielerEins[index[0]]).getMarke() + "\t|" + karten.get(spielerZwei[index[1]]).getMarke() + '\n' +
