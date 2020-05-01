@@ -120,15 +120,15 @@ public class main {
             System.out.printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
         } else if (option == 2) {
             System.out.printf(
-                    "|" + karten.get(spielerEins[index[0]]).getMarke() + "        |" + karten.get(spielerZwei[index[1]]).getMarke() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getName() + "     |" + karten.get(spielerZwei[index[1]]).getName() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getMaximaleGeschwindigkeit() + "      |" + karten.get(spielerZwei[index[1]]).getMaximaleGeschwindigkeit() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getMaximaleLeistungPS() + "       |" + karten.get(spielerZwei[index[1]]).getMaximaleLeistungPS() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getGewicht() + "      |" + karten.get(spielerZwei[index[1]]).getGewicht() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getHubraum() + "      |" + karten.get(spielerZwei[index[1]]).getHubraum() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getBeschleunigung() + "       |" + karten.get(spielerZwei[index[1]]).getBeschleunigung() + '\n' + "Um fortzufahren bitte Eingabe drücken:");
+                    "|" + karten.get(spielerEins[index[0]]).getMarke() + "\t|" + karten.get(spielerZwei[index[1]]).getMarke() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getName() + "\t|" + karten.get(spielerZwei[index[1]]).getName() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getMaximaleGeschwindigkeit() + "\t|" + karten.get(spielerZwei[index[1]]).getMaximaleGeschwindigkeit() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getMaximaleLeistungPS() + "\t|" + karten.get(spielerZwei[index[1]]).getMaximaleLeistungPS() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getGewicht() + "\t|" + karten.get(spielerZwei[index[1]]).getGewicht() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getHubraum() + "\t|" + karten.get(spielerZwei[index[1]]).getHubraum() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getBeschleunigung() + "\t|" + karten.get(spielerZwei[index[1]]).getBeschleunigung() + '\n' + "Um fortzufahren bitte Eingabe drücken:");
             scanner.nextLine();
-            System.out.printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+            System.out.printf("\n");
         }
     }
 
