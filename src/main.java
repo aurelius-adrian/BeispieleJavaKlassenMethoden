@@ -217,12 +217,12 @@ public class main {
             if (tmpIndex < 0) {
                 System.out.printf("Spieler Eins hat Gewonnen!");
                 spielerEins[index[0]] = spielerZwei[index[1]];
-                spielerZwei[index[1]] = -2;
+                spielerZwei[index[1]] = -3;
                 return true;
             } else {
                 spielerEins[tmpIndex] = spielerZwei[index[1]];
-                spielerEins[index[0]] = -2;
-                spielerZwei[index[1]] = -2;
+                spielerEins[index[0]] = -3;
+                spielerZwei[index[1]] = -3;
             }
         } else if (gewinner == 1) {
             spielerZwei[naechstesFreiesElement()[1]] = spielerZwei[index[1]];
@@ -230,12 +230,12 @@ public class main {
             if (tmpIndex < 0) {
                 System.out.printf("Spieler Zwei hat Gewonnen!");
                 spielerZwei[index[1]] = spielerEins[index[0]];
-                spielerEins[index[0]] = -2;
+                spielerEins[index[0]] = -3;
                 return true;
             } else {
                 spielerZwei[tmpIndex] = spielerEins[index[0]];
-                spielerZwei[index[1]] = -2;
-                spielerEins[index[0]] = -2;
+                spielerZwei[index[1]] = -3;
+                spielerEins[index[0]] = -3;
             }
         }
         return false;
@@ -245,14 +245,14 @@ public class main {
         int[] stelle = new int[]{-1, -1};
         try {
             for (int i = 0; i < spielerEins.length; i++) {
-                if (spielerEins[i] != -2) {
+                if (spielerEins[i] != -2 && spielerEins[i] != -3) {
                     stelle[0] = i;
                     break;
                 }
             }
 
             for (int i = 0; i < spielerZwei.length; i++) {
-                if (spielerZwei[i] != -2) {
+                if (spielerZwei[i] != -2 && spielerZwei[i] != -3) {
                     stelle[1] = i;
                     break;
                 }
@@ -271,6 +271,8 @@ public class main {
                 if (spielerEins[i] == -2) {
                     stelle[0] = i;
                     break;
+                } else if (spielerEins[i] == -3 && (stelle[0] == -1 || i < stelle[0])) {
+                    stelle[0] = i;
                 }
             }
 
@@ -278,6 +280,8 @@ public class main {
                 if (spielerZwei[i] == -2) {
                     stelle[1] = i;
                     break;
+                } else if (spielerZwei[i] == -3 && (stelle[1] == -1 || i < stelle[1])) {
+                    stelle[1] = i;
                 }
             }
         } catch (NullPointerException x) {
