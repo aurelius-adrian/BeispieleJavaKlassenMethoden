@@ -21,6 +21,9 @@ public class main {
 
         kartenInitialisieren();
 
+        System.out.printf("Die erste karte von Spieler Eins wird angezeigt, mit ENTER bestätigen:");
+        scanner.nextLine();
+
         boolean gewonnen = false;
         int[] index;
         while (!gewonnen) {
@@ -28,7 +31,7 @@ public class main {
 
             kartenAnzeigen(spielerAmZug, index);
 
-            System.out.printf("geben Sie die Nummer der zu vergleichenden Eigenschaft ein:\n1: Marke \n2: Name \n3: Maximale Geschwindigkeit \n4: Maximale Leistung \n5: Gewicht \n6: Hubraum \n7: Beschleunigung\n");
+            System.out.printf("geben Sie die Nummer der zu vergleichenden Eigenschaft ein:"); //"\n1: Marke \n2: Name \n3: Maximale Geschwindigkeit \n4: Maximale Leistung \n5: Gewicht \n6: Hubraum \n7: Beschleunigung\n"
 
             int eigenschaft = 1;
             boolean eingabeEigenschaft = true;
@@ -46,8 +49,10 @@ public class main {
                 }
             }
             System.out.printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
-            kartenAnzeigen(2, index);
+            //kartenAnzeigen(2, index);
             gewonnen = vergleich(eigenschaft, index);
+            if (gewonnen == true) break;
+            System.out.printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
         }
     }
 
@@ -99,39 +104,40 @@ public class main {
         Scanner scanner = new Scanner(System.in);
         if (option == 0) {
             System.out.printf(
-                    "|" + karten.get(spielerEins[index[0]]).getMarke() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getName() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getMaximaleGeschwindigkeit() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getMaximaleLeistungPS() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getGewicht() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getHubraum() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getBeschleunigung() + '\n' + "Um fortzufahren bitte Eingabe drücken:");
-            scanner.nextLine();
+                            "| 1 |" + karten.get(spielerEins[index[0]]).getMarke() + '\n' +
+                            "| 2 |" + karten.get(spielerEins[index[0]]).getName() + '\n' +
+                            "| 3 |" + karten.get(spielerEins[index[0]]).getMaximaleGeschwindigkeit() + '\n' +
+                            "| 4 |" + karten.get(spielerEins[index[0]]).getMaximaleLeistungPS() + '\n' +
+                            "| 5 |" + karten.get(spielerEins[index[0]]).getGewicht() + '\n' +
+                            "| 6 |" + karten.get(spielerEins[index[0]]).getHubraum() + '\n' +
+                            "| 7 |" + karten.get(spielerEins[index[0]]).getBeschleunigung() + '\n'); //"Um fortzufahren bitte Eingabe drücken:"
+            //scanner.nextLine();
         } else if (option == 1) {
             System.out.printf(
-                    "|" + karten.get(spielerZwei[index[1]]).getMarke() + '\n' +
-                            "|" + karten.get(spielerZwei[index[1]]).getName() + '\n' +
-                            "|" + karten.get(spielerZwei[index[1]]).getMaximaleGeschwindigkeit() + '\n' +
-                            "|" + karten.get(spielerZwei[index[1]]).getMaximaleLeistungPS() + '\n' +
-                            "|" + karten.get(spielerZwei[index[1]]).getGewicht() + '\n' +
-                            "|" + karten.get(spielerZwei[index[1]]).getHubraum() + '\n' +
-                            "|" + karten.get(spielerZwei[index[1]]).getBeschleunigung() + '\n' + "Um fortzufahren bitte Eingabe drücken:");
-            scanner.nextLine();
+                            "| 1 |" + karten.get(spielerZwei[index[1]]).getMarke() + '\n' +
+                            "| 2 |" + karten.get(spielerZwei[index[1]]).getName() + '\n' +
+                            "| 3 |" + karten.get(spielerZwei[index[1]]).getMaximaleGeschwindigkeit() + '\n' +
+                            "| 4 |" + karten.get(spielerZwei[index[1]]).getMaximaleLeistungPS() + '\n' +
+                            "| 5 |" + karten.get(spielerZwei[index[1]]).getGewicht() + '\n' +
+                            "| 6 |" + karten.get(spielerZwei[index[1]]).getHubraum() + '\n' +
+                            "| 7 |" + karten.get(spielerZwei[index[1]]).getBeschleunigung() + '\n'); //"Um fortzufahren bitte Eingabe drücken:"
+            //scanner.nextLine();
         } else if (option == 2) {
             System.out.printf(
-                    "|" + karten.get(spielerEins[index[0]]).getMarke() + "\t|" + karten.get(spielerZwei[index[1]]).getMarke() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getName() + "\t|" + karten.get(spielerZwei[index[1]]).getName() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getMaximaleGeschwindigkeit() + "\t|" + karten.get(spielerZwei[index[1]]).getMaximaleGeschwindigkeit() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getMaximaleLeistungPS() + "\t|" + karten.get(spielerZwei[index[1]]).getMaximaleLeistungPS() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getGewicht() + "\t|" + karten.get(spielerZwei[index[1]]).getGewicht() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getHubraum() + "\t|" + karten.get(spielerZwei[index[1]]).getHubraum() + '\n' +
-                            "|" + karten.get(spielerEins[index[0]]).getBeschleunigung() + "\t|" + karten.get(spielerZwei[index[1]]).getBeschleunigung() + '\n' + "Um fortzufahren bitte Eingabe drücken:");
+                            "|" + karten.get(spielerEins[index[0]]).getMarke() + "\t \t \t |" + karten.get(spielerZwei[index[1]]).getMarke() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getName() + "\t \t \t |" + karten.get(spielerZwei[index[1]]).getName() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getMaximaleGeschwindigkeit() + "\t \t \t |" + karten.get(spielerZwei[index[1]]).getMaximaleGeschwindigkeit() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getMaximaleLeistungPS() + "\t \t \t |" + karten.get(spielerZwei[index[1]]).getMaximaleLeistungPS() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getGewicht() + "\t \t \t |" + karten.get(spielerZwei[index[1]]).getGewicht() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getHubraum() + "\t \t \t |" + karten.get(spielerZwei[index[1]]).getHubraum() + '\n' +
+                            "|" + karten.get(spielerEins[index[0]]).getBeschleunigung() + "\t \t \t |" + karten.get(spielerZwei[index[1]]).getBeschleunigung() + '\n' + "Um fortzufahren bitte Eingabe drücken:");
             scanner.nextLine();
             System.out.printf("\n");
         }
     }
 
     private static boolean vergleich(int eigenschaft, int[] index) {
+        Scanner scanner = new Scanner(System.in);
         boolean gewonnen = false;
         switch (eigenschaft) {
             case 1:
@@ -141,11 +147,15 @@ public class main {
             case 3:
                 if (karten.get(spielerEins[index[0]]).getMaximaleGeschwindigkeit() > karten.get(spielerZwei[index[1]]).getMaximaleGeschwindigkeit()) {
                     gewonnen = gewinn(index, 0);
-                    System.out.printf("Spieler Eins hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Eins hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 0;
                 } else if (karten.get(spielerZwei[index[1]]).getMaximaleGeschwindigkeit() > karten.get(spielerEins[index[0]]).getMaximaleGeschwindigkeit()) {
                     gewonnen = gewinn(index, 1);
-                    System.out.printf("Spieler Zwei hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Zwei hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 1;
                 } else {
 //                        Gleichstand Progammieren!!!!!
@@ -154,11 +164,15 @@ public class main {
             case 4:
                 if (karten.get(spielerEins[index[0]]).getMaximaleLeistungPS() > karten.get(spielerZwei[index[1]]).getMaximaleLeistungPS()) {
                     gewonnen = gewinn(index, 0);
-                    System.out.printf("Spieler Eins hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Eins hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 0;
                 } else if (karten.get(spielerZwei[index[1]]).getMaximaleLeistungPS() > karten.get(spielerEins[index[0]]).getMaximaleLeistungPS()) {
                     gewonnen = gewinn(index, 1);
-                    System.out.printf("Spieler Zwei hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Zwei hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 1;
                 } else {
 //                        Gleichstand Progammieren!!!!!
@@ -167,11 +181,15 @@ public class main {
             case 5:
                 if (karten.get(spielerEins[index[0]]).getGewicht() > karten.get(spielerZwei[index[1]]).getGewicht()) {
                     gewonnen = gewinn(index, 0);
-                    System.out.printf("Spieler Eins hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Eins hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 0;
                 } else if (karten.get(spielerZwei[index[1]]).getGewicht() > karten.get(spielerEins[index[0]]).getGewicht()) {
                     gewonnen = gewinn(index, 1);
-                    System.out.printf("Spieler Zwei hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Zwei hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 1;
                 } else {
 //                        Gleichstand Progammieren!!!!!
@@ -180,11 +198,15 @@ public class main {
             case 6:
                 if (karten.get(spielerEins[index[0]]).getHubraum() > karten.get(spielerZwei[index[1]]).getHubraum()) {
                     gewonnen = gewinn(index, 0);
-                    System.out.printf("Spieler Eins hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Eins hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 0;
                 } else if (karten.get(spielerZwei[index[1]]).getHubraum() > karten.get(spielerEins[index[0]]).getHubraum()) {
                     gewonnen = gewinn(index, 1);
-                    System.out.printf("Spieler Zwei hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Zwei hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 1;
                 } else {
 //                        Gleichstand Progammieren!!!!!
@@ -193,11 +215,15 @@ public class main {
             case 7:
                 if (karten.get(spielerEins[index[0]]).getBeschleunigung() > karten.get(spielerZwei[index[1]]).getBeschleunigung()) {
                     gewonnen = gewinn(index, 0);
-                    System.out.printf("Spieler Eins hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Eins hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 0;
                 } else if (karten.get(spielerZwei[index[1]]).getBeschleunigung() > karten.get(spielerEins[index[0]]).getBeschleunigung()) {
                     gewonnen = gewinn(index, 1);
-                    System.out.printf("Spieler Zwei hat gewonnen!\n");
+                    if (gewonnen == true) break;
+                    System.out.printf("Spieler Zwei hat die Runde gewonnen!\n");
+                    scanner.nextLine();
                     spielerAmZug = 1;
                 } else {
 //                        Gleichstand Progammieren!!!!!
@@ -215,7 +241,7 @@ public class main {
             spielerEins[naechstesFreiesElement()[0]] = spielerEins[index[0]];
             int tmpIndex = naechstesFreiesElement()[0];
             if (tmpIndex < 0) {
-                System.out.printf("Spieler Eins hat Gewonnen!");
+                System.out.printf("Spieler Eins hat das Spiel Gewonnen!");
                 spielerEins[index[0]] = spielerZwei[index[1]];
                 spielerZwei[index[1]] = -3;
                 return true;
@@ -228,7 +254,7 @@ public class main {
             spielerZwei[naechstesFreiesElement()[1]] = spielerZwei[index[1]];
             int tmpIndex = naechstesFreiesElement()[1];
             if (tmpIndex < 0) {
-                System.out.printf("Spieler Zwei hat Gewonnen!");
+                System.out.printf("Spieler Zwei hat das Spiel Gewonnen!");
                 spielerZwei[index[1]] = spielerEins[index[0]];
                 spielerEins[index[0]] = -3;
                 return true;
